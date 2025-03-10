@@ -9,8 +9,8 @@ const getDog = async () => {
         
         const data = await response.json();
         const cardsParent = document.getElementById('cards');
-console.log( data.items)
-        data.items.forEach(character => {
+console.log(data.results)
+        data.results.forEach(character => {
             const card = document.createElement('div');
             card.innerHTML = `
                 <div class="bg-white shadow-md rounded-lg overflow-hidden">
@@ -18,7 +18,7 @@ console.log( data.items)
 
                     <div class="p-4">
                         <h2 class="text-xl font-bold mb-2">${character.name}</h2>
-                        <p class="text-gray-700">${character.description}</p>
+                        <p class="text-gray-700">${character.status}</p>
                     </div>
                 </div>  
             `;
